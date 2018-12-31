@@ -1,1 +1,13 @@
-
+.table-top-row, .table-mid-row{
+    padding: 33px
+}
+.table-top-row .add-user{
+    float: left;
+}
+.table-top-row .search{
+    padding: 5px;
+    float: right;
+}
+.reset{
+    margin-right: 10px;
+}

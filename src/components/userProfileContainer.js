@@ -91,13 +91,15 @@ class UserProfileContainer extends React.Component {
   searchWithEnter = (e) => {
     if(e.which == 13){
       const searchValue = e.target.value.trim().toLowerCase();
-      console.log('search value is: '+ searchValue);
       e.preventDefault();
-      const data = this.getData();
-      data.filter((jsonData, index)=> {
-        console.log(jsonData.includes());
-      });
-      console.log(data);
+      let totalData = this.getData();
+      const data = {...totalData};
+      if(searchValue){
+        const searchedData = data.filter(function(dataValue){ return dataValue.userName.trim().toLowerCase() == searchValue });
+        this.setState({persons: searchedData});
+      }else{
+        this.setState({persons: totalData});
+      }
     }
   }
 
